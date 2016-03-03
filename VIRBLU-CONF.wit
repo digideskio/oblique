@@ -1,0 +1,87 @@
+> NAVITAIRE:
+    global names, routes, dates
+    names = {}
+    routes = {}
+    dates = {}
+
+NAVITAIRE 'Navitaire Inc' SKYLIGHTS:
+    pass
+
+SKYLIGHTS 'Skylights v6\.0\.4' PORTS:
+    pass
+
+# get airports served
+
+PORTS 'var Dests = new Array \([[:space:]]*' PORT:
+    pass
+
+PORT '^"XXX[A-Z]",[[:space:]]*':
+    pass
+    
+PORT '^"#[A-Z]{3}#",[[:space:]]*':
+    port = _.range(1, 2)
+    routes[port] = None
+    names[port] = None
+
+PORT '^0[[:space:]]*\);' NAMES:
+    pass
+
+# get name of airport
+
+NAMES '^[[:space:]]*var sXXX[A-Z] = "--- #[A-Z]+( [A-Z]+)*# ---";' MORENAMES:
+    global country
+    country = _.range(1, 2).title()
+
+# MORENAMES = NAMES
+
+MORENAMES '^[[:space:]]*var sXXX[A-Z] = "--- #[A-Z]+( [A-Z]+)*# ---";':
+    global country
+    country = _.range(1, 2).title()
+
+MORENAMES '^[[:space:]]*var s#[A-Z]{3}# = "#[^"]+#";':
+    port = _.range(1,2)
+    name = _.range(3,4)
+    names[port] = '%s, %s' % (name, country)
+
+MORENAMES '[[:space:]]*var aXXX[A-Z] = new Array\([[:space:]]*0[[:space:]]*\);' ROUTES:
+    pass
+
+# routes
+
+ROUTES '^[[:space:]]*var aXXX[A-Z] = new Array\([[:space:]]*0[[:space:]]*\);':
+    pass
+
+ROUTES '^[[:space:]]*var a#[A-Z]{3}# = new Array\(' ROUTE:
+    global origin
+    origin = _.range(1,2)
+    assert routes[origin] is None
+    routes[origin] = []
+
+ROUTE '^[[:space:]]*"XXX[A-Z]",':
+    pass
+
+ROUTE '^[[:space:]]*"#[A-Z]{3}#",':
+    dest = _.range(1,2)
+    routes[origin].append(dest)
+
+ROUTE '^[[:space:]]*0[[:space:]]*\);' ROUTES:
+    pass
+
+ROUTES '^[[:space:]]*}' DATEFIND:
+    pass
+
+DATEFIND '<select name=\'sector_1_m\' [^>]*>[[:space:]]*' DATE:
+    pass
+
+DATE '^<OPTION VALUE=#[0-9]{2}#[0-9]{4}#( SELECTED)?>[[:alpha:]]{3} #[0-9]{4}#[[:space:]]*':
+    m = int(_.range(1,2))
+    y = int(_.range(2,3))
+    z = int(_.range(4,5))
+    assert y == z, `y, z`
+    dates[(y, m)] = True
+
+DATE '^</select>' >:
+    pass
+
+'$':
+    raise EOFError()

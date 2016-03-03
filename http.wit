@@ -1,0 +1,20 @@
+> VERSION:
+    pass
+
+VERSION '^HTTP/1\.[01] +' STATUS:
+    pass
+
+STATUS '100[^\n]*\n([^\n]+\n)*\n' VERSION:
+    pass
+
+STATUS '200[^\n]*\n' HEADERS:
+    pass
+
+HEADERS 'transfer-encoding=chunked':
+    pass
+
+HEADERS 'content-length'
+
+HEADERS '\n':
+    chunked = 1:
+        CHUNKED_READ

@@ -1,0 +1,240 @@
+$ 231.00 AUD Blue Saver (including taxes of $21.00 AUD)
+  OOL 01/03 06:10 - 08:30 SYD Virgin Blue Flight DJ 500
+  SYD 01/03 09:30 - 11:30 PER Virgin Blue Flight DJ 421
+$ 231.00 AUD Blue Saver (including taxes of $21.00 AUD)
+  OOL 01/03 17:00 - 19:20 SYD Virgin Blue Flight DJ 522
+  SYD 01/03 19:50 - 21:50 PER Virgin Blue Flight DJ 429
+$ 231.00 AUD Blue Saver (including taxes of $21.00 AUD)
+  OOL 02/03 06:10 - 08:30 SYD Virgin Blue Flight DJ 500
+  SYD 02/03 09:30 - 11:30 PER Virgin Blue Flight DJ 421
+$ 231.00 AUD Blue Saver (including taxes of $21.00 AUD)
+  OOL 02/03 17:00 - 19:20 SYD Virgin Blue Flight DJ 522
+  SYD 02/03 19:50 - 21:50 PER Virgin Blue Flight DJ 429
+$ 231.00 AUD Blue Saver (including taxes of $21.00 AUD)
+  OOL 03/03 06:10 - 08:30 SYD Virgin Blue Flight DJ 500
+  SYD 03/03 09:30 - 11:30 PER Virgin Blue Flight DJ 421
+
+$ 251.00 AUD Blue Saver (including taxes of $22.81 AUD)
+  OOL 01/03 15:35 - 17:55 SYD Virgin Blue Flight DJ 518
+  SYD 01/03 19:50 - 21:50 PER Virgin Blue Flight DJ 429
+$ 251.00 AUD Blue Saver (including taxes of $22.81 AUD)
+  OOL 02/03 15:35 - 17:55 SYD Virgin Blue Flight DJ 518
+  SYD 02/03 19:50 - 21:50 PER Virgin Blue Flight DJ 429
+$ 257.00 AUD Blue Saver (including taxes of $23.36 AUD)
+  OOL 03/03 17:00 - 19:20 SYD Virgin Blue Flight DJ 522
+  SYD 03/03 19:50 - 21:50 PER Virgin Blue Flight DJ 429
+
+$ 271.00 AUD Blue Saver (including taxes of $24.63 AUD)
+  BNE 01/03 19:30 - 22:45 PER Virgin Blue Flight DJ 642
+$ 271.00 AUD Blue Saver (including taxes of $24.63 AUD)
+  OOL 02/03 16:10 - 19:20 MEL Virgin Blue Flight DJ 994
+  MEL 02/03 20:45 - 21:55 PER Virgin Blue Flight DJ 297
+$ 271.00 AUD Blue Saver (including taxes of $24.63 AUD)
+  BNE 02/03 19:30 - 22:45 PER Virgin Blue Flight DJ 642
+$ 271.00 AUD Blue Saver (including taxes of $24.63 AUD)
+  OOL 03/03 15:35 - 17:55 SYD Virgin Blue Flight DJ 518
+  SYD 03/03 19:50 - 21:50 PER Virgin Blue Flight DJ 429
+$ 271.00 AUD Blue Saver (including taxes of $24.63 AUD)
+  BNE 03/03 19:30 - 22:45 PER Virgin Blue Flight DJ 642
+
+$ 291.00 AUD Blue Saver (including taxes of $26.45 AUD)
+  OOL 01/03 16:10 - 19:20 MEL Virgin Blue Flight DJ 994
+  MEL 01/03 20:45 - 21:55 PER Virgin Blue Flight DJ 297
+$ 291.00 AUD Blue Saver (including taxes of $26.45 AUD)
+  OOL 03/03 16:10 - 19:20 MEL Virgin Blue Flight DJ 994
+  MEL 03/03 20:45 - 21:55 PER Virgin Blue Flight DJ 297
+
+$ 331.00 AUD Fair Fare (including taxes of $30.09 AUD)
+  OOL 01/03 08:30 - 11:40 MEL Virgin Blue Flight DJ 982
+  MEL 01/03 13:40 - 14:50 PER Virgin Blue Flight DJ 293
+$ 331.00 AUD Fair Fare (including taxes of $30.09 AUD)
+  OOL 02/03 09:55 - 13:00 ADL Virgin Blue Flight DJ 684
+  ADL 02/03 15:35 - 16:25 PER Virgin Blue Flight DJ 355
+$ 331.00 AUD Fair Fare (including taxes of $30.09 AUD)
+  OOL 03/03 08:30 - 11:40 MEL Virgin Blue Flight DJ 982
+  MEL 03/03 13:40 - 14:50 PER Virgin Blue Flight DJ 293
+
+$ 361.00 AUD Fair Fare (including taxes of $32.81 AUD)
+  BNE 01/03 10:00 - 12:30 SYD Virgin Blue Flight DJ 226
+  SYD 01/03 13:30 - 15:30 PER Virgin Blue Flight DJ 423
+$ 361.00 AUD Fair Fare (including taxes of $32.81 AUD)
+  BNE 02/03 10:00 - 12:30 SYD Virgin Blue Flight DJ 226
+  SYD 02/03 13:30 - 15:30 PER Virgin Blue Flight DJ 423
+$ 371.00 AUD Fair Fare (including taxes of $33.72 AUD)
+  OOL 02/03 08:30 - 11:40 MEL Virgin Blue Flight DJ 982
+  MEL 02/03 13:40 - 14:50 PER Virgin Blue Flight DJ 293
+$ 371.00 AUD Fair Fare (including taxes of $33.72 AUD)
+  OOL 03/03 09:55 - 13:00 ADL Virgin Blue Flight DJ 684
+  ADL 03/03 15:35 - 16:25 PER Virgin Blue Flight DJ 355
+$ 387.00 AUD Fair Fare (including taxes of $35.18 AUD)
+  BNE 02/03 05:15 - 08:30 MEL Virgin Blue Flight DJ 306
+  MEL 02/03 10:10 - 11:20 PER Virgin Blue Flight DJ 291
+$ 387.00 AUD Fair Fare (including taxes of $35.18 AUD)
+  BNE 03/03 05:15 - 08:30 MEL Virgin Blue Flight DJ 306
+  MEL 03/03 10:10 - 11:20 PER Virgin Blue Flight DJ 291
+$ 401.00 AUD Fair Fare (including taxes of $36.45 AUD)
+  BNE 01/03 05:15 - 08:30 MEL Virgin Blue Flight DJ 306
+  MEL 01/03 10:10 - 11:20 PER Virgin Blue Flight DJ 291
+$ 401.00 AUD Fair Fare (including taxes of $36.45 AUD)
+  BNE 03/03 10:00 - 12:30 SYD Virgin Blue Flight DJ 226
+  SYD 03/03 13:30 - 15:30 PER Virgin Blue Flight DJ 423
+$ 411.00 AUD Fair Fare (including taxes of $37.36 AUD)
+  OOL 01/03 09:55 - 13:00 ADL Virgin Blue Flight DJ 684
+  ADL 01/03 15:35 - 16:25 PER Virgin Blue Flight DJ 355
+
+$ 557.00 AUD Flexi Saver (including taxes of $50.63 AUD)
+  OOL 01/03 17:00 - 19:20 SYD Virgin Blue Flight DJ 522
+  SYD 01/03 19:50 - 21:50 PER Virgin Blue Flight DJ 429
+$ 557.00 AUD Flexi Saver (including taxes of $50.63 AUD)
+  OOL 02/03 17:00 - 19:20 SYD Virgin Blue Flight DJ 522
+  SYD 02/03 19:50 - 21:50 PER Virgin Blue Flight DJ 429
+$ 557.00 AUD Flexi Saver (including taxes of $50.63 AUD)
+  OOL 03/03 17:00 - 19:20 SYD Virgin Blue Flight DJ 522
+  SYD 03/03 19:50 - 21:50 PER Virgin Blue Flight DJ 429
+$ 577.00 AUD Flexi Saver (including taxes of $52.45 AUD)
+  BNE 02/03 05:15 - 08:30 MEL Virgin Blue Flight DJ 306
+  MEL 02/03 10:10 - 11:20 PER Virgin Blue Flight DJ 291
+$ 577.00 AUD Flexi Saver (including taxes of $52.45 AUD)
+  BNE 03/03 05:15 - 08:30 MEL Virgin Blue Flight DJ 306
+  MEL 03/03 10:10 - 11:20 PER Virgin Blue Flight DJ 291
+$ 581.00 AUD Flexi Saver (including taxes of $52.81 AUD)
+  BNE 01/03 05:15 - 08:30 MEL Virgin Blue Flight DJ 306
+  MEL 01/03 10:10 - 11:20 PER Virgin Blue Flight DJ 291
+$ 581.00 AUD Flexi Saver (including taxes of $52.81 AUD)
+  OOL 01/03 06:10 - 08:30 SYD Virgin Blue Flight DJ 500
+  SYD 01/03 09:30 - 11:30 PER Virgin Blue Flight DJ 421
+$ 581.00 AUD Flexi Saver (including taxes of $52.81 AUD)
+  OOL 01/03 08:30 - 11:40 MEL Virgin Blue Flight DJ 982
+  MEL 01/03 13:40 - 14:50 PER Virgin Blue Flight DJ 293
+$ 581.00 AUD Flexi Saver (including taxes of $52.81 AUD)
+  OOL 01/03 09:55 - 13:00 ADL Virgin Blue Flight DJ 684
+  ADL 01/03 15:35 - 16:25 PER Virgin Blue Flight DJ 355
+$ 581.00 AUD Flexi Saver (including taxes of $52.81 AUD)
+  BNE 01/03 10:00 - 12:30 SYD Virgin Blue Flight DJ 226
+  SYD 01/03 13:30 - 15:30 PER Virgin Blue Flight DJ 423
+$ 581.00 AUD Flexi Saver (including taxes of $52.81 AUD)
+  OOL 01/03 15:35 - 17:55 SYD Virgin Blue Flight DJ 518
+  SYD 01/03 19:50 - 21:50 PER Virgin Blue Flight DJ 429
+$ 581.00 AUD Flexi Saver (including taxes of $52.81 AUD)
+  OOL 01/03 16:10 - 19:20 MEL Virgin Blue Flight DJ 994
+  MEL 01/03 20:45 - 21:55 PER Virgin Blue Flight DJ 297
+$ 581.00 AUD Flexi Saver (including taxes of $52.81 AUD)
+  BNE 01/03 19:30 - 22:45 PER Virgin Blue Flight DJ 642
+$ 581.00 AUD Flexi Saver (including taxes of $52.81 AUD)
+  OOL 02/03 06:10 - 08:30 SYD Virgin Blue Flight DJ 500
+  SYD 02/03 09:30 - 11:30 PER Virgin Blue Flight DJ 421
+$ 581.00 AUD Flexi Saver (including taxes of $52.81 AUD)
+  OOL 02/03 08:30 - 11:40 MEL Virgin Blue Flight DJ 982
+  MEL 02/03 13:40 - 14:50 PER Virgin Blue Flight DJ 293
+$ 581.00 AUD Flexi Saver (including taxes of $52.81 AUD)
+  OOL 02/03 09:55 - 13:00 ADL Virgin Blue Flight DJ 684
+  ADL 02/03 15:35 - 16:25 PER Virgin Blue Flight DJ 355
+$ 581.00 AUD Flexi Saver (including taxes of $52.81 AUD)
+  BNE 02/03 10:00 - 12:30 SYD Virgin Blue Flight DJ 226
+  SYD 02/03 13:30 - 15:30 PER Virgin Blue Flight DJ 423
+$ 581.00 AUD Flexi Saver (including taxes of $52.81 AUD)
+  OOL 02/03 15:35 - 17:55 SYD Virgin Blue Flight DJ 518
+  SYD 02/03 19:50 - 21:50 PER Virgin Blue Flight DJ 429
+$ 581.00 AUD Flexi Saver (including taxes of $52.81 AUD)
+  OOL 02/03 16:10 - 19:20 MEL Virgin Blue Flight DJ 994
+  MEL 02/03 20:45 - 21:55 PER Virgin Blue Flight DJ 297
+$ 581.00 AUD Flexi Saver (including taxes of $52.81 AUD)
+  BNE 02/03 19:30 - 22:45 PER Virgin Blue Flight DJ 642
+$ 581.00 AUD Flexi Saver (including taxes of $52.81 AUD)
+  OOL 03/03 06:10 - 08:30 SYD Virgin Blue Flight DJ 500
+  SYD 03/03 09:30 - 11:30 PER Virgin Blue Flight DJ 421
+$ 581.00 AUD Flexi Saver (including taxes of $52.81 AUD)
+  OOL 03/03 08:30 - 11:40 MEL Virgin Blue Flight DJ 982
+  MEL 03/03 13:40 - 14:50 PER Virgin Blue Flight DJ 293
+$ 581.00 AUD Flexi Saver (including taxes of $52.81 AUD)
+  OOL 03/03 09:55 - 13:00 ADL Virgin Blue Flight DJ 684
+  ADL 03/03 15:35 - 16:25 PER Virgin Blue Flight DJ 355
+$ 581.00 AUD Flexi Saver (including taxes of $52.81 AUD)
+  BNE 03/03 10:00 - 12:30 SYD Virgin Blue Flight DJ 226
+  SYD 03/03 13:30 - 15:30 PER Virgin Blue Flight DJ 423
+$ 581.00 AUD Flexi Saver (including taxes of $52.81 AUD)
+  OOL 03/03 15:35 - 17:55 SYD Virgin Blue Flight DJ 518
+  SYD 03/03 19:50 - 21:50 PER Virgin Blue Flight DJ 429
+$ 581.00 AUD Flexi Saver (including taxes of $52.81 AUD)
+  OOL 03/03 16:10 - 19:20 MEL Virgin Blue Flight DJ 994
+  MEL 03/03 20:45 - 21:55 PER Virgin Blue Flight DJ 297
+$ 581.00 AUD Flexi Saver (including taxes of $52.81 AUD)
+  BNE 03/03 19:30 - 22:45 PER Virgin Blue Flight DJ 642
+$ 587.00 AUD Fully Flexible (including taxes of $53.36 AUD)
+  OOL 01/03 17:00 - 19:20 SYD Virgin Blue Flight DJ 522
+  SYD 01/03 19:50 - 21:50 PER Virgin Blue Flight DJ 429
+$ 587.00 AUD Fully Flexible (including taxes of $53.36 AUD)
+  OOL 02/03 17:00 - 19:20 SYD Virgin Blue Flight DJ 522
+  SYD 02/03 19:50 - 21:50 PER Virgin Blue Flight DJ 429
+$ 587.00 AUD Fully Flexible (including taxes of $53.36 AUD)
+  OOL 03/03 17:00 - 19:20 SYD Virgin Blue Flight DJ 522
+  SYD 03/03 19:50 - 21:50 PER Virgin Blue Flight DJ 429
+$ 607.00 AUD Fully Flexible (including taxes of $55.18 AUD)
+  BNE 02/03 05:15 - 08:30 MEL Virgin Blue Flight DJ 306
+  MEL 02/03 10:10 - 11:20 PER Virgin Blue Flight DJ 291
+$ 607.00 AUD Fully Flexible (including taxes of $55.18 AUD)
+  BNE 03/03 05:15 - 08:30 MEL Virgin Blue Flight DJ 306
+  MEL 03/03 10:10 - 11:20 PER Virgin Blue Flight DJ 291
+$ 611.00 AUD Fully Flexible (including taxes of $55.54 AUD)
+  BNE 01/03 05:15 - 08:30 MEL Virgin Blue Flight DJ 306
+  MEL 01/03 10:10 - 11:20 PER Virgin Blue Flight DJ 291
+$ 611.00 AUD Fully Flexible (including taxes of $55.54 AUD)
+  OOL 01/03 06:10 - 08:30 SYD Virgin Blue Flight DJ 500
+  SYD 01/03 09:30 - 11:30 PER Virgin Blue Flight DJ 421
+$ 611.00 AUD Fully Flexible (including taxes of $55.54 AUD)
+  OOL 01/03 08:30 - 11:40 MEL Virgin Blue Flight DJ 982
+  MEL 01/03 13:40 - 14:50 PER Virgin Blue Flight DJ 293
+$ 611.00 AUD Fully Flexible (including taxes of $55.54 AUD)
+  OOL 01/03 09:55 - 13:00 ADL Virgin Blue Flight DJ 684
+  ADL 01/03 15:35 - 16:25 PER Virgin Blue Flight DJ 355
+$ 611.00 AUD Fully Flexible (including taxes of $55.54 AUD)
+  BNE 01/03 10:00 - 12:30 SYD Virgin Blue Flight DJ 226
+  SYD 01/03 13:30 - 15:30 PER Virgin Blue Flight DJ 423
+$ 611.00 AUD Fully Flexible (including taxes of $55.54 AUD)
+  OOL 01/03 15:35 - 17:55 SYD Virgin Blue Flight DJ 518
+  SYD 01/03 19:50 - 21:50 PER Virgin Blue Flight DJ 429
+$ 611.00 AUD Fully Flexible (including taxes of $55.54 AUD)
+  OOL 01/03 16:10 - 19:20 MEL Virgin Blue Flight DJ 994
+  MEL 01/03 20:45 - 21:55 PER Virgin Blue Flight DJ 297
+$ 611.00 AUD Fully Flexible (including taxes of $55.54 AUD)
+  BNE 01/03 19:30 - 22:45 PER Virgin Blue Flight DJ 642
+$ 611.00 AUD Fully Flexible (including taxes of $55.54 AUD)
+  OOL 02/03 06:10 - 08:30 SYD Virgin Blue Flight DJ 500
+  SYD 02/03 09:30 - 11:30 PER Virgin Blue Flight DJ 421
+$ 611.00 AUD Fully Flexible (including taxes of $55.54 AUD)
+  OOL 02/03 08:30 - 11:40 MEL Virgin Blue Flight DJ 982
+  MEL 02/03 13:40 - 14:50 PER Virgin Blue Flight DJ 293
+$ 611.00 AUD Fully Flexible (including taxes of $55.54 AUD)
+  OOL 02/03 09:55 - 13:00 ADL Virgin Blue Flight DJ 684
+  ADL 02/03 15:35 - 16:25 PER Virgin Blue Flight DJ 355
+$ 611.00 AUD Fully Flexible (including taxes of $55.54 AUD)
+  BNE 02/03 10:00 - 12:30 SYD Virgin Blue Flight DJ 226
+  SYD 02/03 13:30 - 15:30 PER Virgin Blue Flight DJ 423
+$ 611.00 AUD Fully Flexible (including taxes of $55.54 AUD)
+  OOL 02/03 15:35 - 17:55 SYD Virgin Blue Flight DJ 518
+  SYD 02/03 19:50 - 21:50 PER Virgin Blue Flight DJ 429
+$ 611.00 AUD Fully Flexible (including taxes of $55.54 AUD)
+  OOL 02/03 16:10 - 19:20 MEL Virgin Blue Flight DJ 994
+  MEL 02/03 20:45 - 21:55 PER Virgin Blue Flight DJ 297
+$ 611.00 AUD Fully Flexible (including taxes of $55.54 AUD)
+  BNE 02/03 19:30 - 22:45 PER Virgin Blue Flight DJ 642
+$ 611.00 AUD Fully Flexible (including taxes of $55.54 AUD)
+  OOL 03/03 06:10 - 08:30 SYD Virgin Blue Flight DJ 500
+  SYD 03/03 09:30 - 11:30 PER Virgin Blue Flight DJ 421
+$ 611.00 AUD Fully Flexible (including taxes of $55.54 AUD)
+  OOL 03/03 08:30 - 11:40 MEL Virgin Blue Flight DJ 982
+  MEL 03/03 13:40 - 14:50 PER Virgin Blue Flight DJ 293
+$ 611.00 AUD Fully Flexible (including taxes of $55.54 AUD)
+  OOL 03/03 09:55 - 13:00 ADL Virgin Blue Flight DJ 684
+  ADL 03/03 15:35 - 16:25 PER Virgin Blue Flight DJ 355
+$ 611.00 AUD Fully Flexible (including taxes of $55.54 AUD)
+  BNE 03/03 10:00 - 12:30 SYD Virgin Blue Flight DJ 226
+  SYD 03/03 13:30 - 15:30 PER Virgin Blue Flight DJ 423
+$ 611.00 AUD Fully Flexible (including taxes of $55.54 AUD)
+  OOL 03/03 15:35 - 17:55 SYD Virgin Blue Flight DJ 518
+  SYD 03/03 19:50 - 21:50 PER Virgin Blue Flight DJ 429
+$ 611.00 AUD Fully Flexible (including taxes of $55.54 AUD)
+  OOL 03/03 16:10 - 19:20 MEL Virgin Blue Flight DJ 994
+  MEL 03/03 20:45 - 21:55 PER Virgin Blue Flight DJ 297
+$ 611.00 AUD Fully Flexible (including taxes of $55.54 AUD)
+  BNE 03/03 19:30 - 22:45 PER Virgin Blue Flight DJ 642

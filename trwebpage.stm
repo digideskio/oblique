@@ -1,0 +1,60 @@
+
+INIT '<table' AFTERTR
+    import sys
+    sys.stdout.write(match.before())
+    
+AFTERTR '<t([hd])' DOABBR
+    sys.stdout.write(match.before().rstrip())
+    ttype = match.group(1)
+
+DOABBR '</t([hd])>' B4NAME
+    assert (match.group(1) == ttype)
+    abbr = match.before()
+
+B4NAME '<t([hd])' DONAME
+    assert (not match.before().strip())
+    assert (match.group(1) == ttype)
+
+DONAME '</t([hd])>' B4LOC
+    assert (match.group(1) == ttype)
+    name = match.before()
+
+B4LOC '<t([hd])' DOLOC
+    assert (not match.before().strip())
+    assert (match.group(1) == ttype)
+
+DOLOC '</t([hd])>' B4DATE
+    assert (match.group(1) == ttype)
+    loc = match.before()
+
+B4DATE '<t([hd])' DODATE
+    assert (not match.before().strip())
+    assert (match.group(1) == ttype)
+
+DODATE '</t([hd])>' B4DLINE
+    assert (match.group(1) == ttype)
+    date = match.before()
+
+B4DLINE '<t([hd])' DODLINE
+    assert (not match.before().strip())
+    assert (match.group(1) == ttype)
+
+DODLINE '</t([hd])>' ENDROW
+    assert (match.group(1) == ttype)
+    name = match.before()
+
+ENDROW '</tr>' NEXTROW
+    assert (not match.before().strip())
+    sys.stdout.write('<t%s%s</t%s>\n' % (ttype, date, ttype))
+    sys.stdout.write('<t%s%s</t%s>\n' % (ttype, loc, ttype))
+    sys.stdout.write('<t%s%s</t%s>\n' % (ttype, name, ttype))
+    sys.stdout.write('<t%s%s</t%s>\n' % (ttype, abbr, ttype))
+    sys.stdout.write('<t%s%s</t%s>\n' % (ttype, dline, ttype))
+    sys.stdout.write('</tr>\n')
+
+NEXTROW '<tr>' AFTERTR
+    assert not match.before().strip()
+    sys.stdout.write('<tr>\n')
+
+NEXTROW EOF
+    sys.stdout.write(match.before())

@@ -1,0 +1,13 @@
+INIT '' OPENTAG
+    import sys
+
+OPENTAG '<' CLOSETAG
+    sys.stdout.write(TEXT)
+    sys.stdout.write('[')
+    
+CLOSETAG '>' OPENTAG
+    sys.stdout.write(TEXT)
+    sys.stdout.write(']')
+
+OPENTAG EOF
+    sys.stdout.write(TEXT)

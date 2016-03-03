@@ -1,0 +1,34 @@
+> START:
+    global fares
+    fares = {}
+
+START '\n':
+    pass
+
+START '<form name="market_1">' FARE0:
+    pass
+
+FARE0 '<input type=\'radio\' name=\'sector_1_radio\' value="#[^"]{124}#"' 
+FARE0:
+    label = _.range(1,2)
+    fares[label] = []
+    
+FARE0 '<form target="_top" name="myForm" method="post" '
+'action="skylights.cgi">' FARE1:
+    pass
+
+FARE1 '<input type=\'hidden\' name="#[^"]+#" value="#[^"]*#">':
+    name = _.range(1,2)
+    value = _.range(3,4)
+    for label, parts in fares.items():
+        if name == 'px':
+            value = label[112:]
+        elif name == 'm1':
+            value = label[:64]
+        elif name == 'm1F':
+            value = label[88:112]
+        parts.append('%s=%s' % (name, value))
+
+FARE1 '</form>' >:
+    pass
+

@@ -1,0 +1,38 @@
+> START:
+    global names, routes
+    names = {}
+    routes = {}
+
+START 'var Dests=new Array\(' PORT:
+    pass
+
+PORT '"#[A-Z]{3}#",':
+    port = _.range(1,2)
+    routes[port] = None
+    names[port] = None
+
+PORT '0\);' NAMES:
+    pass
+
+NAMES '^[[:space:]]*var s#[A-Z]{3}#="#[^"]+#";':
+    port = _.range(1,2)
+    name = _.range(3,4)
+    names[port] = '%s, Australia' % name
+
+NAMES|ROUTES '^[[:space:]]*var a#[A-Z]{3}#=new Array\(' ROUTE:
+    global origin
+    origin = _.range(1,2)
+    assert routes[origin] is None
+    routes[origin] = []
+
+ROUTE '"#[A-Z]{3}#",':
+    dest = _.range(1,2)
+    routes[origin].append(dest)
+
+ROUTE '0\);' ROUTES:
+    pass
+
+ROUTES 'function' >:
+    pass
+    
+    

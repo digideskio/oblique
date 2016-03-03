@@ -1,0 +1,338 @@
+# global namespace must include
+# Awkward: the Awkward module
+# WITNESS: an Awkward instance
+# FILENAME: the filename
+# DEBUG: print debug statements
+
+INIT
+''
+NEWCLAUSE NEWRULE STARTRULEP
+
+    global lineno, codeindent
+
+    lineno = 1
+
+    def codeindent(line):
+        indent = 0
+        i = 0
+        ch = line[i]
+        while ch in ' \t':
+            if ch == ' ':
+                indent += 1
+            elif ch == '\t':
+                leap = 8 - (indent % 8)
+                indent += leap
+            i += 1
+            ch = line[i]
+        return indent
+$
+# STARTRULEP - what follows may be a rule or nothing (initial)
+# STARTRULE - what follows must be a rule
+# STARTCODE - what follows must be a line of code
+# STARTLINE - what follows is a rule if first character is not whitespace,
+#             or code if first character is whitespace
+
+NEWCLAUSE
+''
+>
+    global rules, source, codestart
+    rules = []
+    source = None
+    codestart = -1
+$
+SAVECLAUSE 
+'' 
+NEWCLAUSE
+    if DEBUG:
+        print 'SAVECLAUSE'
+    code = Awkward.codecompile(source, 
+                '<code starting at %s:%d>' % (FILENAME, codestart))
+    for (states, regexp, stack) in rules:
+        if stack:
+            stack.reverse()
+        WITNESS.addLabelRule(states, regexp, code, stack)
+$
+NEWRULE 
+'' 
+>
+    global states, regexp, nchain
+    states = None
+    regexp = None
+    nchain = None
+$
+SAVERULE 
+'' 
+NEWRULE
+    if DEBUG:
+        print 'SAVERULE', (states, regexp, nchain)
+    rules.append((states, regexp, nchain))
+$
+WHITESPACE 
+'^[[:space:]]*(\#[^\n]*\n[[:space:]]*)*'
+>
+    global lineno
+    lineno += _.count('\n')
+$    
+NEWLINE 
+'^[ \t]*(\#[^\n]*)?(\n|$)' 
+>
+    global lineno
+    lineno += 1
+$
+# any other pattern means extra text was present
+NEWLINE
+'\n|$' 
+>
+    text = _.strip()
+    raise RuntimeError('%s:%d Expected newline, got %s' % 
+                (FILENAME, lineno, `_`))
+$
+STARTRULEP STARTRULE
+'^[ \t]*(\#[^\n]*)?\n'
+*
+    global lineno
+    lineno += 1
+$
+# if this rule triggers, nothing was added to Awkward instance
+STARTRULEP 
+'^[ \t]*(\#[^\n]*)?$'
+>
+    global lineno
+    lineno += _.count('\n')
+$
+STARTLINE
+'^\#[^\n]*\n'
+*
+    global lineno
+    lineno += 1
+$
+STARTRULEP
+'^#[A-Za-z0-9_]+#[[:space:]]*=[[:space:]]*#[A-Za-z0-9_]+#' 
+NEWLINE STARTRULEP
+    global lineno
+    WITNESS.addLabel(_.range(1,2), _.range(3,4))
+    lineno += _.count('\n')
+$
+STARTLINE
+'^#[A-Za-z0-9_]+#[[:space:]]*=[[:space:]]*#[A-Za-z0-9_]+#'
+SAVECLAUSE NEWLINE STARTRULEP
+    global lineno
+    WITNESS.addLabel(_.range(1,2), _.range(3,4))
+    lineno += _.count('\n')
+$
+STARTRULEP STARTRULE
+'^[A-Za-z0-9_]+' 
+WHITESPACE CURRSTATE
+    global states
+    if DEBUG:
+        print 'state = ', _
+    states = [_]
+$
+STARTLINE
+'^[A-Za-z0-9_]+'
+SAVECLAUSE WHITESPACE CURRSTATE
+    global states
+    if DEBUG:
+        print 'state = ', _
+    states = [_]
+$
+CURRSTATE 
+'^\|' 
+WHITESPACE CURRSTATE1
+    pass
+$
+CURRSTATE1 
+'^[A-Za-z0-9_]+' 
+WHITESPACE CURRSTATE
+    if DEBUG:
+        print 'state = ', _
+    states.append(_)
+$
+STARTRULEP STARTRULE CURRSTATE
+"^'" 
+REGEXP
+    global regexp
+    regexp = ''
+$
+STARTLINE 
+"^'" 
+SAVECLAUSE REGEXP
+    global regexp
+    regexp = ''
+$
+REGEXP 
+'\\\\'
+*
+    # ignore escaped \
+    global regexp
+    regexp += _
+$
+REGEXP 
+"\\'"
+*
+    # backslashed ' replaced with single '
+    global regexp
+    regexp += _[:-2] + "'"
+$
+REGEXP 
+"'" 
+WHITESPACE NEXTSTATE0
+    global regexp
+    regexp += _[:-1]
+    if DEBUG:
+        print 'regexp =', regexp
+$
+STARTRULEP STARTRULE
+'^>' 
+WHITESPACE NEXTSTATE0
+    global states, regexp
+    start = '[START]'
+    states = [start]
+    regexp = ''
+    WITNESS.setInitialLabel(start)
+$
+STARTLINE 
+'^>' 
+SAVERULES WHITESPACE NEXTSTATE0
+    global states, regexp
+    start = '[START]'
+    states = [start]
+    regexp = ''
+    WITNESS.setInitialLabel(start)
+$
+#NEXTSTATE0 PRE:
+#    assert nchain is None, `nchain`
+#$
+# allow concatenation of strings for REs
+# ZZZ
+NEXTSTATE0
+"^'"
+REGEXP
+    pass
+$
+NEXTSTATE0 
+'^>' 
+WHITESPACE RULETERMINATOR
+    global nchain
+    nchain = [Awkward.STOP]
+$
+NEXTSTATE0 
+'^[A-Za-z0-9_]+' 
+WHITESPACE NEXTTERM
+    global nchain
+    nchain = [_]
+$
+NEXTSTATE0 RULETERMINATOR NEXTTERM
+'^:' 
+SAVERULE NEWLINE STARTCODE
+    pass
+$
+RULETERMINATOR NEXTTERM
+'^;' 
+SAVERULE WHITESPACE STARTRULE
+    pass
+$
+NEXTTERM
+'^>'
+WHITESPACE NEXTSTATE
+    pass
+$
+NEXTSTATE 
+'^[A-Za-z0-9_]+' 
+WHITESPACE NEXTTERM
+    nchain.append(_)
+$
+# ZZZ
+
+STARTRULEP
+'\n'
+ERROR
+    text = _[:-1]
+$    
+STARTRULEP 
+'$' 
+ERROR
+    lines = string.split(_, '\n')
+    text = lines[0]
+    if len(text) > 43:
+        text = text[:40] + '...'
+    lineno = lineno - len(lines) + 1
+    raise RuntimeError("%s:%d: unexpected text %s"
+                % (FILENAME, actual, repr(text)))
+$
+
+#STARTCODE PRE:
+#    assert source is None, `source`
+
+# ignore any blank lines
+STARTCODE
+'^[ \t]*\n'
+*
+    global lineno
+    lineno += 1
+$
+STARTCODE
+'^[ \t]*$'
+SAVECLAUSE
+    raise RuntimeError('%s:%d: expected code' % (FILENAME, lineno))
+$
+STARTCODE 
+'^[ \t]+#[^\n]+\n'
+STARTLINE
+    global codestart, indent, lineno, source
+    codestart = lineno
+    lineno += 1
+    indent = codeindent(_)
+    source = _[_.tags[1]:]
+$
+STARTCODE
+'^[ \t]+#[^\n]+$'
+SAVECLAUSE
+    global codestart, indent, source
+    codestart = lineno
+    indent = codeindent(_)
+    source = _[_.tags[1]:]
+$
+STARTLINE
+'^[ \t]*\n'
+*
+    global lineno, source
+    lineno += 1
+    source += _
+$
+# the expected ending, after saving the clause, exit
+STARTLINE
+'^[ \t]*$'
+SAVECLAUSE
+    pass
+$
+STARTLINE 
+'^[ \t]+#[^\n]+\n'
+*
+    global lineno, source
+    ind = codeindent(_)
+    if ind < indent:
+        raise RuntimeError('%s:%d: incorrect indent' % (FILENAME, lineno))
+    elif ind == indent:
+        source += _[_.tags[1]:]
+    else:
+        source += _
+    lineno += 1
+$
+STARTLINE 
+'^[ \t]+#[^\n]+$'
+SAVECLAUSE
+    global source
+    ind = codeindent(_)
+    if ind < indent:
+        raise RuntimeError('%s:%d: incorrect indent' % (FILENAME, lineno))
+    elif ind == indent:
+        source += _[_.tags[1]:]
+    else:
+        source += _
+$
+*
+'$'
+*
+    raise EOFError('%s:%d' % (FILENAME, lineno))
+$

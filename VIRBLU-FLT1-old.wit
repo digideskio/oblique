@@ -1,0 +1,201 @@
+> STARTFARE:
+    global flights
+    flights = []
+
+FAREBASIS1 'function showFareRule\(fareBasis, fareLabel\)' FAREBASIS2:
+    global basis
+    basis = {}
+
+FAREBASIS2 'if \(fareBasis == "#[A-Z][[:digit:]]{3}#"\) \{[[:space:]]*' FAREBASIS3:
+    global name
+    name = _.range(1,2)
+    # phone time, fee, web time, fee
+    basis[name] = b = {
+        'cancel': [None, None, None, None],
+        'datetime': [None, None, None, None],
+        'paxname': [None, None, None, None]
+    }
+
+FAREBASIS3 '^message = "\\nFare Details\\n    " \+ fareLabel \+ "\\n'
+FAREBASIS4:
+    pass
+
+FAREBASIS4 '^[[:space:]]*"[[:space:]]*\+ "[[[:space:]]-]*' FAREBASIS5:
+    pass
+
+FAREBASIS4 '^[[:space:]]*}' FAREBASIS2:
+    pass
+
+FAREBASIS5 
+'Cancellations or Flight Changes \(i\.e\. date, time or passenger name\)'
+' can be made by contacting the Guest Contact Centre \(GCC\) up to '
+'#[[:digit:]]+#mins prior to your flight\'s scheduled departure time\. Date/time'
+' changes can also be made via our website up to #[[:digit:]]+#mins prior to '
+'departure where original booking was made directly via our website\.'
+FAREBASIS4:
+    b['cancel'][0] = b['datetime'][0] = b['paxname'][0] \
+                = int(_.range(1,2)) * 60
+    b['cancel'][2] = b['datetime'][2] = b['paxname'][2] \
+                = int(_.range(3,4)) * 60
+
+FAREBASIS5
+'For flight changes, your new fare will be at least the price of the '
+'original fare and may be more\.  You must pay this fare difference '
+'when you change your booking\.'
+FAREBASIS4:
+    pass
+
+FAREBASIS5
+'Cancellations permitted up to #[[:digit:]]+#mins prior to your flight\'s '
+'scheduled departure time by contacting the GCC\.'
+FAREBASIS4:
+    b['cancel'][0] = int(_.range(1,2)) * 60
+
+FAREBASIS5
+'When cancelling flights, the amount paid is held in credit to be used '
+'within 12 months from the date of first purchase\. All future bookings'
+' utilising such credit, can only be made via the GCC and at applicable'
+' GCCentre fare levels, which are at least AUD$10 more than internet '
+'fares for Australian domestic flights\^\.'
+FAREBASIS4:
+    pass
+
+FAREBASIS5
+'If you do not fly and do not notify us at least 30mins prior to the '
+'flight\'s scheduled departure time, you will forfeit fare paid\.'
+FAREBASIS4:
+    pass
+
+FAREBASIS5
+'This fare is non-refundable\.'
+FAREBASIS4:
+    pass
+
+FAREBASIS5
+'This fare is only applicable origin to destination and no enroute '
+'stopovers are permitted\.'
+FAREBASIS4:
+    pass
+
+FAREBASIS5
+'\^For INTERNATIONAL TRAVEL, the currency in which you made your '
+'original booking will apply to your entire booking\.  Please refer '
+'to the Fees and Charges tab in the Booking section of our website or '
+'your itinerary for applicable charges in that currency\.'
+FAREBASIS4:
+    pass
+
+FAREBASIS5
+'Cancellations or Flight Changes \(i\.e\. date, time, origin or '
+'destination\) permitted if requested at least #[[:digit:]]+#hrs prior to your '
+'flight\'s departure time\. Charges apply:'
+FAREBASIS4:
+    pass
+
+STARTFARE '\n':
+    pass
+
+STARTFARE '<form name="market_1">' FARE0:
+    global flights
+    flights = []
+
+FARE0 'Sorry, there are no available flights going out on' >:
+    pass
+
+FARE0
+'<input type=\'radio\' name=\'sector_1_radio\' value="#[^"]{124}#"'
+FARE1:
+    global flight
+    flight = ([], [])
+    sectors = flight[0]
+    line = _.range(1,2)
+    year = int(line[:4])
+    month = int(line[4:6])
+    day = int(line[6:8])
+    airlcode = line[8:10]
+    flightno = line[10:16].strip()
+    origin = line[16:19]
+    dest = line[19:22]
+    sectors.append([airlcode, flightno, origin, dest, None, None])
+    airlcode = line[22:24]
+    if airlcode.strip():
+        flightno = line[24:30].strip()
+        origin = line[30:33]
+        dest = line[33:36]
+        sectors.append([airlcode, flightno, origin, dest, None, None])
+        airlcode = line[36:38]
+        if airlcode.strip():
+            flightno = line[38:44].strip()
+            origin = line[44:47]
+            dest = line[47:50]
+            sectors.append([airlcode, flightno, origin, dest, None, None])
+    #corig = line[50:52]
+    #cdest = line[52:54]
+    #basis = line[54:56]
+    #price0 = int(line[56:64])
+    depy = int(line[64:68])
+    depm = int(line[68:70])
+    depd = int(line[70:72])
+    deph = int(line[72:74])
+    depx = int(line[74:76])
+    sectors[0][4] = (depy, depm, depd, deph, depx)
+    arry = int(line[76:80])
+    arrm = int(line[80:82])
+    arrd = int(line[82:84])
+    arrh = int(line[84:86])
+    arrx = int(line[86:88])
+    sectors[-1][5] = (arry, arrm, arrd, arrh, arrx)
+    #faretype = fareline[88:112]
+
+# dates = [date, origin, dest, [flights]]
+# flight = (sectors, fares)
+# sector = [airlcode, flightno, origin, dest, deptime, arrtime]
+# fare = [currency, price, faretype, farebasis, conditions]
+FARE1 'javascript:showFareRule\(\'#[^\']+#\', \'#[^\']+#\'' FARE2:
+    global fare
+    farebasis = _.range(1,2)
+    faretype = _.range(3,4).strip()
+    fare = [None, None, faretype, farebasis, None]
+    
+FARE2 '<font class=\'offered\'>Adult Web</font>' FARE3:
+    pass
+
+FARE3 '<font class=\'offered\'>\$#[[:digit:]]+#\.#[[:digit:]]+# #[A-Z]+#'
+'</font>' FARE1:
+    # add credit card payment surcharge of $2/passenger/flight
+    # VB only accepts credit cards
+    dollars = int(_.range(1,2)) + 2
+    cents = int(_.range(3,4))
+    currency = _.range(5,6)
+    price = dollars * 100 + cents
+    fare[0] = currency
+    fare[1] = price
+    flight[1].append(fare)
+
+FARE1 'Operated by ' FARE4:
+    pass
+
+FARE4 '<small>#[[:digit:]]{1,2}#:#[[:digit:]]{2}#(am)?<br>'
+'#[[:digit:]]{1,2}#:#[[:digit:]]{2}#(am)?</small>' FARE0:
+    landingh = int(_.range(1,2))
+    landingm = int(_.range(3,4))
+    takeoffh = int(_.range(5,6))
+    takeoffm = int(_.range(7,8))
+    sectors = flight[0]
+    year, month, date, hour = sectors[0][4][:4]
+    if hour > 12 and landingh < 12:
+        year, month, date = sectors[-1][5][:3]
+        sectors[0][5] = (year, month, date, landingh, landingm)
+        sectors[-1][4] = (year, month, date, takeoffh, takeoffm)
+    else:
+        sectors[0][5] = (year, month, date, landingh, landingm)
+        if takeoffh < landingh:
+            year, month, date = sectors[-1][5][:3]
+        sectors[-1][4] = (year, month, date, takeoffh, takeoffm)
+    flights.append(flight)
+
+FARE4 '<font size=1 class=label>Arrive</font></td>' FARE0:
+    flights.append(flight)
+
+FARE0 '$' >:
+    pass
